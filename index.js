@@ -51,7 +51,7 @@ function checkCollision(rock) {
 
 function createRock(x) {
   const rock = document.createElement('div')
- 
+
   rock.className = 'rock';
   rock.style.left = `${x}px`;
 
@@ -76,7 +76,7 @@ GAME.appendChild(rock);
   function moveRock() {
      rock.style.top = `$(top += 2)px`;
     if (checkCollision(rock) )
-    return endGame(); 
+    return endGame();
     else if (top < GAME_HEIGHT) {
       window.requestAnimationFrame(moveRock)}
       else {rock.remove()}
@@ -120,8 +120,8 @@ GAME.appendChild(rock);
  window.clearInterval(gameInterval);
   ROCKS.forEach(function(rock){
      rock.remove();}
-   
-   
+
+
   )}
 
 
@@ -132,12 +132,12 @@ function moveDodger(e) {
    e.stopPropagation();
    } else if(e.which === RIGHT_ARROW) {
      moveDodgerRight();
-     
+
      //if right arrow pressed, call 'moveDodgerRight()`
      e.preventDefault();
      e.stopPropagation();
      }
-  
+
 
   // implement me!
   /**
@@ -195,4 +195,3 @@ function positionToInteger(p) {
     createRock(Math.floor(Math.random() *  (GAME_WIDTH - 20)))
   }, 1000)
 }
-
