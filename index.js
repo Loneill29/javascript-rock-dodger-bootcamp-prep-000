@@ -20,7 +20,7 @@ function checkCollision(rock) {
   const top = positionToInteger(rock.style.top);
   //gives rock's distance from top as an integer (without 'px')
   //the following 'if' statement says 'if the rock's distance from the top is greater than 360 (i.e. it is now at same level or below where the dodger is)...
-  
+
   if (top > 360) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left);//gives dodger's left edge distance from left as an integer (without 'px')
     const dodgerRightEdge = dodgerLeftEdge+40;//gives dodger's right edge distance from left as an integer (without 'px')
@@ -103,7 +103,7 @@ function endGame() {
  window.clearInterval(gameInterval);
   ROCKS.forEach(function(rock){
      rock.remove();}
-   
+
   )}
 
 function moveDodger(e) {
@@ -161,8 +161,3 @@ function start() {
     createRock(Math.floor(Math.random() *  (GAME_WIDTH - 20)))
   }, 1000)
 }
-
-
-
-
-
